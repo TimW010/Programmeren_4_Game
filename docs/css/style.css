@@ -1,0 +1,70 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+selector {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+card {
+    display: block;
+    height: 300px; width: 250px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    font-size: x-large;
+    color: white;
+}
+
+card img {
+    display: block;
+    margin: 0 auto;
+}
+
+background {
+    display: block;
+    position: absolute;
+    background-image: url(../images/road.png);
+    height: 1080px; width: 1920px;
+    background-repeat: repeat-y;
+}
+
+
+menu title {
+    display: block;
+    background-image: url(../images/title.png);
+    background-repeat: no-repeat;
+    height: 88px; width: 724px;
+    top: 10%;
+    position: absolute;
+}
+
+menu div {
+    display: block;
+    position: absolute;
+    background-image: url(../images/playButton.png);
+    background-repeat: no-repeat;
+    height: 192px; width: 480px;
+    top: 50%;
+    cursor: pointer;
+}
+
+card:hover {
+    color: black;
+}
