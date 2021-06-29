@@ -4,7 +4,6 @@ export class UI extends Object {
         super("ui");
         this.timer = 0;
         this.score = 0;
-        this.highScore = 500;
         this.game = game;
         this.scoreDiv = document.createElement("score");
         this.element.appendChild(this.scoreDiv);
@@ -16,6 +15,7 @@ export class UI extends Object {
         this.pauseButton.innerHTML = "Pause";
         this.pauseButton.addEventListener("click", (e) => this.pause(e));
         this.element.appendChild(this.pauseButton);
+        this.highScore = parseInt(localStorage.getItem("highScore"));
     }
     pause(e) {
         this.game.pause = !this.game.pause;
@@ -32,6 +32,10 @@ export class UI extends Object {
         this.score++;
     }
     saveScore() {
+        if (this.score > this.highScore) {
+            this.highScore = this.score;
+            localStorage.setItem("highScore", JSON.stringify(this.highScore));
+        }
     }
 }
 //# sourceMappingURL=ui.js.map

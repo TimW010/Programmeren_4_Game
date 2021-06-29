@@ -7,10 +7,10 @@ export class UI extends Object{
     private timerDiv : HTMLElement;
     private highScoreDiv : HTMLElement;
     private pauseButton : HTMLElement;
-
+    
     private timer : number = 0;
     private score : number = 0;
-    private highScore : number = 500; // must be updated by localstorage
+    private highScore : number; // must be updated by localstorage
 
     private game : Game;
 
@@ -31,6 +31,7 @@ export class UI extends Object{
         this.pauseButton.innerHTML = "Pause";
         this.pauseButton.addEventListener("click", (e : MouseEvent) => this.pause(e));
         this.element.appendChild(this.pauseButton);
+        this.highScore = parseInt(localStorage.getItem("highScore")!)
     }
 
     private pause(e : MouseEvent){
@@ -54,6 +55,10 @@ export class UI extends Object{
 
     public saveScore(){
         //saves the highscore
+        if(this.score > this.highScore){
+            this.highScore = this.score
+            localStorage.setItem("highScore", JSON.stringify(this.highScore));
+        }
         //must be added to the localstorage
     }
 

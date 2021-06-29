@@ -25,11 +25,23 @@ export class Level extends Object {
         this.ui.update();
         for(let car of this.obstacles){
             car.update(this.game.velocity);
+            if(this.checkCollision(this.player.getBoundingRectangle(), car.getBoundingRectangle())){
+                console.log("collision");
+                this.game.pause = !this.game.pause;
+                this.ui.saveScore();
+            }
         }
     }
 
     public remove(){
         //remove
+    }
+
+    private checkCollision(player: ClientRect, object: ClientRect) : boolean {
+        return (player.left <= object.right &&
+            object.left <= player.right &&
+            player.top <= object.bottom &&
+            object.top <= player.bottom)
     }
 
 
