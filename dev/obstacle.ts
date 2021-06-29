@@ -15,7 +15,7 @@ export class Obstacle extends Object {
         this.y = (0 - (this.element.clientHeight * 2));
     }
 
-    private lanes(){
+    /*private lanes(){
         const arrayOfLanes = [];
         const carWidth = this.element.clientWidth;
 
@@ -35,12 +35,12 @@ export class Obstacle extends Object {
         arrayOfLanes.push(lane_5);
         
         return arrayOfLanes;
-    }
+    }*/
 
     private changeCar() {
         let tagName = this.carCollection[Math.floor(Math.random() * this.carCollection.length)];
         this.element.style.backgroundImage = `url(./images/${tagName}.png)`;
-        //this.element.style.filter = `hue-rotate(${Math.floor(Math.random() * 360)}deg)`;
+        this.element.style.filter = `hue-rotate(${Math.floor(Math.random() * 360)}deg)`;
     }
 
     public update(speed : number) {
