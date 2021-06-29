@@ -11,7 +11,7 @@ export class Level extends Object {
         this.game = game;
         this.music = new Audio(`./music/${this.euroBeat[Math.floor(Math.random() * this.euroBeat.length)]}.mp3`);
         this.music.play();
-        this.game.play = true;
+        this.game._play = true;
         this.player = new Player(car);
         this.ui = new UI(this.game);
         this.obstacles.push(new Obstacle(this.game), new Obstacle(this.game));
@@ -20,11 +20,11 @@ export class Level extends Object {
         this.player.update();
         this.ui.update();
         for (let car of this.obstacles) {
-            car.update(this.game.velocity);
+            car.update(this.game._velocity);
             if (this.checkCollision(this.player.getBoundingRectangle(), car.getBoundingRectangle())) {
                 console.log("collision");
                 this.ui.saveScore();
-                this.game.play = false;
+                this.game._play = false;
                 this.endGame();
             }
         }

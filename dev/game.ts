@@ -4,12 +4,25 @@ import { Object } from "./object.js";
 
 export class Game {
     
-    public velocity : number = 3;
+    private velocity : number = 3;
     private velocityCounter : number = 0;
     private screen : Object;
     private background : Background;
-    public play : boolean = false;
+    private play: boolean = false;
     public pause : boolean = false;
+
+    public get _play(): boolean {
+        return this.play;
+    }
+
+    public set _play(value: boolean) {
+        this.play = value;
+    }
+
+    get _velocity(){
+        return this.velocity;
+    }
+
 
     constructor(){
         this.background = new Background();

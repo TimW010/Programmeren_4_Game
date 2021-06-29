@@ -10,6 +10,15 @@ export class Game {
         this.screen = new Menu(this);
         this.gameLoop();
     }
+    get _play() {
+        return this.play;
+    }
+    set _play(value) {
+        this.play = value;
+    }
+    get _velocity() {
+        return this.velocity;
+    }
     gameLoop() {
         if (!this.pause) {
             if (this.play) {
