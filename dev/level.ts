@@ -15,12 +15,13 @@ export class Level extends Object {
         super("level");
         this.game = game;
         this.player = new Player(car);
-        //this.ui = new UI("ui");
+        this.ui = new UI();
 
     }
 
     public update(){
-        //update
+        this.player.update();
+        this.ui.update();
     }
 
     public remove(){
