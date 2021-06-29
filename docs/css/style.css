@@ -110,3 +110,29 @@ score, highScore, pauseButton {
     color: black;
     height: 50px; width: 320px;
 }
+
+endScreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+endScreen text {
+    display: block;
+    background-image: url(../images/title.png);
+    background-repeat: no-repeat;
+    height: 88px; width: 724px;
+    top: 10%;
+    position: absolute;
+}
+
+endScreen div {
+    display: block;
+    position: absolute;
+    background-image: url(../images/playButton.png);
+    background-repeat: no-repeat;
+    height: 192px; width: 480px;
+    top: 50%;
+    cursor: pointer;
+}

@@ -6,8 +6,11 @@ import { EndScreen } from "./endScreen.js";
 export class Level extends Object {
     constructor(game, car) {
         super("level");
+        this.euroBeat = ["Deja_Vu", "NoOneSleepInTokyo", "RunningInThe90s"];
         this.obstacles = [];
         this.game = game;
+        this.music = new Audio(`./music/${this.euroBeat[Math.floor(Math.random() * this.euroBeat.length)]}.mp3`);
+        this.music.play();
         this.game.play = true;
         this.player = new Player(car);
         this.ui = new UI(this.game);
@@ -27,6 +30,7 @@ export class Level extends Object {
         }
     }
     endGame() {
+        this.music.pause();
         super.remove();
         this.player.remove();
         this.element.remove();

@@ -7,14 +7,19 @@ import { EndScreen } from "./endScreen.js";
 
 export class Level extends Object {
 
+    private euroBeat : string[] = ["Deja_Vu", "NoOneSleepInTokyo", "RunningInThe90s"]
+
     private ui : UI;
     private player : Player;
     private game : Game;
     private obstacles : Obstacle[] = [];
+    private music : HTMLAudioElement;
 
     constructor(game : Game, car : string){
         super("level");
         this.game = game;
+        this.music = new Audio(`./music/${this.euroBeat[Math.floor(Math.random() * this.euroBeat.length)]}.mp3`);
+        this.music.play();
         this.game.play = true;
         this.player = new Player(car);
         this.ui = new UI(this.game);
@@ -36,6 +41,7 @@ export class Level extends Object {
     }
 
     private endGame(){
+        this.music.pause();
         super.remove();
         this.player.remove();
         this.element.remove();
