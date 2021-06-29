@@ -3,6 +3,7 @@ import { Player } from "./player.js";
 import { Obstacle } from "./obstacle.js";
 import { Object } from "./object.js";
 import { UI } from "./ui.js";
+import { EndScreen } from "./endScreen.js";
 
 export class Level extends Object {
 
@@ -27,14 +28,21 @@ export class Level extends Object {
             car.update(this.game.velocity);
             if(this.checkCollision(this.player.getBoundingRectangle(), car.getBoundingRectangle())){
                 console.log("collision");
-                this.game.pause = !this.game.pause;
                 this.ui.saveScore();
+                this.game.play = false;
+                this.endGame();
             }
         }
     }
 
-    public remove(){
-        //remove
+    private endGame(){
+        super.remove();
+        this.player.remove();
+        this.element.remove();
+        for(let obstacle of this.obstacles){
+            obstacle.remove();
+        }
+        this.game.changeScreen(new EndScreen(this.game));
     }
 
     private checkCollision(player: ClientRect, object: ClientRect) : boolean {

@@ -36,6 +36,7 @@ export class Game {
     }
 
     public changeScreen(screen : Object){
+        this.velocity = 3;
         this.screen.remove();
         this.screen = screen;
     }

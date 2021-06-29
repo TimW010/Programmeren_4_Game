@@ -36,6 +36,7 @@ export class UI extends Object {
             this.highScore = this.score;
             localStorage.setItem("highScore", JSON.stringify(this.highScore));
         }
+        this.element.remove();
     }
 }
 //# sourceMappingURL=ui.js.map

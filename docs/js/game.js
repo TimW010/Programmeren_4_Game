@@ -28,6 +28,7 @@ export class Game {
         requestAnimationFrame(() => this.gameLoop());
     }
     changeScreen(screen) {
+        this.velocity = 3;
         this.screen.remove();
         this.screen = screen;
     }

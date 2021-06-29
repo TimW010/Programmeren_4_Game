@@ -1,4 +1,5 @@
 import { Game } from "./game.js";
+import { Menu } from "./menu.js";
 import { Object } from "./object.js";
 
 export class UI extends Object{
@@ -59,7 +60,7 @@ export class UI extends Object{
             this.highScore = this.score
             localStorage.setItem("highScore", JSON.stringify(this.highScore));
         }
-        //must be added to the localstorage
+        this.element.remove();
     }
 
 }
