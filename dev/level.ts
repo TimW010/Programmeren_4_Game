@@ -23,7 +23,7 @@ export class Level extends Object {
         this.game._play = true;
         this.player = new Player(car);
         this.ui = new UI(this.game);
-        this.obstacles.push(new Obstacle(this.game), new Obstacle(this.game))
+        this.obstacles.push(new Obstacle(this.game), new Obstacle(this.game), new Obstacle(this.game), new Obstacle(this.game))
     }
 
     public update(){

@@ -116,6 +116,10 @@ score, highScore, pauseButton {
     height: 50px; width: 320px;
 }
 
+pauseButton:hover {
+    cursor: pointer;
+}
+
 endScreen {
     display: flex;
     flex-direction: column;

@@ -19,7 +19,12 @@ export class UI extends Object {
     }
     pause(e) {
         this.game.pause = !this.game.pause;
-        console.log("click");
+        if (this.game.pause) {
+            this.pauseButton.innerHTML = "Play";
+        }
+        else {
+            this.pauseButton.innerHTML = "Pause";
+        }
     }
     update() {
         const scoreToString = `Score : ${this.score}`;

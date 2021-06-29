@@ -37,7 +37,11 @@ export class UI extends Object{
 
     private pause(e : MouseEvent){
         this.game.pause = !this.game.pause;
-        console.log("click");
+        if(this.game.pause){
+            this.pauseButton.innerHTML = "Play";
+        } else {
+            this.pauseButton.innerHTML = "Pause";
+        }
     }
 
     public update() {
