@@ -5,7 +5,7 @@ import { Selector } from "./selector.js";
 export class Menu extends Object {
 
     constructor(game : Game){
-        super("menu");
+        super("mainMenu");
 
         const title = document.createElement("title");
         const button = document.createElement("div");        

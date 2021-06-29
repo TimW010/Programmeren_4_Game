@@ -7,8 +7,6 @@ export class EndScreen extends Object {
         const button = document.createElement("div");
         this.element.appendChild(text);
         this.element.appendChild(button);
-        text.innerHTML = "You Chrashed!";
-        button.innerHTML = "Continue";
         button.addEventListener("click", () => game.changeScreen(new Menu(game)));
     }
 }

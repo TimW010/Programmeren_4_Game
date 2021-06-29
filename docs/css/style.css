@@ -11,7 +11,8 @@ html, body {
     font-family: 'Pixel';
     src: url(VPPixel-Simplified.otf);
 }
-menu {
+
+Mainmenu {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -59,7 +60,7 @@ background {
 }
 
 
-menu title {
+mainMenu title {
     display: block;
     background-image: url(../images/title.png);
     background-repeat: no-repeat;
@@ -68,14 +69,18 @@ menu title {
     position: absolute;
 }
 
-menu div {
+mainMenu div {
     display: block;
     position: absolute;
-    background-image: url(../images/playButton.png);
+    background-image: url(../images/play.png);
     background-repeat: no-repeat;
-    height: 192px; width: 480px;
+    height: 192px; width: 352px;
     top: 50%;
     cursor: pointer;
+}
+
+mainMenu div:hover {
+    box-shadow: 10px 10px;
 }
 
 card:hover {
@@ -120,9 +125,9 @@ endScreen {
 
 endScreen text {
     display: block;
-    background-image: url(../images/title.png);
+    background-image: url(../images/crash.png);
     background-repeat: no-repeat;
-    height: 88px; width: 724px;
+    height: 88px; width: 845px;
     top: 10%;
     position: absolute;
 }
@@ -130,9 +135,13 @@ endScreen text {
 endScreen div {
     display: block;
     position: absolute;
-    background-image: url(../images/playButton.png);
+    background-image: url(../images/continue.png);
     background-repeat: no-repeat;
-    height: 192px; width: 480px;
+    height: 192px; width: 575px;
     top: 50%;
     cursor: pointer;
+}
+
+endScreen div:hover {
+    box-shadow: 10px 10px;
 }
