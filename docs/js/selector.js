@@ -3,7 +3,7 @@ import { Object } from "./object.js";
 export class Selector extends Object {
     constructor(game) {
         super("selector");
-        this.cars = ["toyota", "ferrari", "lamborghini", "chevrolet"];
+        this.cars = ["Toyota", "Ferrari", "Lamborghini", "Chevrolet"];
         this.game = game;
         this.showCars();
     }

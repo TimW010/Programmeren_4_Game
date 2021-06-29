@@ -1,3 +1,4 @@
+import { Game } from "./game.js";
 import { Object } from "./object.js";
 
 export class UI extends Object{
@@ -5,13 +6,17 @@ export class UI extends Object{
     private scoreDiv : HTMLElement;
     private timerDiv : HTMLElement;
     private highScoreDiv : HTMLElement;
+    private pauseButton : HTMLElement;
 
     private timer : number = 0;
     private score : number = 0;
     private highScore : number = 500; // must be updated by localstorage
 
-    constructor(){
+    private game : Game;
+
+    constructor(game : Game){
         super("ui");
+        this.game = game;
         //create score
         this.scoreDiv = document.createElement("score");
         this.element.appendChild(this.scoreDiv);
@@ -21,6 +26,16 @@ export class UI extends Object{
         //create highScore
         this.highScoreDiv =  document.createElement("highScore");
         this.element.appendChild(this.highScoreDiv);
+        //create pauseButton
+        this.pauseButton = document.createElement("pauseButton");
+        this.pauseButton.innerHTML = "Pause";
+        this.pauseButton.addEventListener("click", (e : MouseEvent) => this.pause(e));
+        this.element.appendChild(this.pauseButton);
+    }
+
+    private pause(e : MouseEvent){
+        this.game.pause = !this.game.pause;
+        console.log("click");
     }
 
     public update() {

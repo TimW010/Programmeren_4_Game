@@ -14,18 +14,23 @@ export class Level extends Object {
     constructor(game : Game, car : string){
         super("level");
         this.game = game;
+        this.game.play = true;
         this.player = new Player(car);
-        this.ui = new UI();
-
+        this.ui = new UI(this.game);
+        this.obstacles.push(new Obstacle(this.game), new Obstacle(this.game))
     }
 
     public update(){
         this.player.update();
         this.ui.update();
+        for(let car of this.obstacles){
+            car.update(this.game.velocity);
+        }
     }
 
     public remove(){
         //remove
     }
+
 
 }

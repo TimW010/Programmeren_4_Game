@@ -4,7 +4,7 @@ import { Object } from "./object.js";
 
 export class Selector extends Object {
     
-    private cars : string[] = ["toyota", "ferrari", "lamborghini", "chevrolet"];
+    private cars : string[] = ["Toyota", "Ferrari", "Lamborghini", "Chevrolet"];
     private chosenCar : string;
     private game : Game;
     private button : HTMLElement;
