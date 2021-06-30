@@ -1,7 +1,7 @@
 import { Game } from "./game.js";
 import { Menu } from "./menu.js";
 import { Object } from "./object.js";
-
+window.localStorage;
 export class UI extends Object{
 
     private scoreDiv : HTMLElement;
@@ -11,7 +11,7 @@ export class UI extends Object{
     
     //private timer : number = 0;
     private score : number = 0;
-    private highScore : number; // must be updated by localstorage
+    private highScore : number;
 
     private game : Game;
 
@@ -32,7 +32,11 @@ export class UI extends Object{
         this.pauseButton.innerHTML = "Pause";
         this.pauseButton.addEventListener("click", (e : MouseEvent) => this.pause(e));
         this.element.appendChild(this.pauseButton);
-        this.highScore = parseInt(localStorage.getItem("highScore")!)
+        if(localStorage.getItem("highScore") !== null ){
+            this.highScore = parseInt(localStorage.getItem("highScore")!);
+        } else {
+            this.highScore = 0;
+        }
     }
 
     private pause(e : MouseEvent){

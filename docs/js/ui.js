@@ -1,4 +1,5 @@
 import { Object } from "./object.js";
+window.localStorage;
 export class UI extends Object {
     constructor(game) {
         super("ui");
@@ -12,7 +13,12 @@ export class UI extends Object {
         this.pauseButton.innerHTML = "Pause";
         this.pauseButton.addEventListener("click", (e) => this.pause(e));
         this.element.appendChild(this.pauseButton);
-        this.highScore = parseInt(localStorage.getItem("highScore"));
+        if (localStorage.getItem("highScore") !== null) {
+            this.highScore = parseInt(localStorage.getItem("highScore"));
+        }
+        else {
+            this.highScore = 0;
+        }
     }
     pause(e) {
         this.game.pause = !this.game.pause;
