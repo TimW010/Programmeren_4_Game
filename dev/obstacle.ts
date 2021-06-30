@@ -37,7 +37,7 @@ export class Obstacle extends Object {
 
     private changeCar() {
         let tagName = this.carCollection[Math.floor(Math.random() * this.carCollection.length)];
-        this.element.style.backgroundImage = `url(./images/${tagName}.png)`;
+        this.element.style.backgroundImage = `url(../images/${tagName}.png)`;
         this.element.style.filter = `hue-rotate(${Math.floor(Math.random() * 360)}deg)`;
     }
 

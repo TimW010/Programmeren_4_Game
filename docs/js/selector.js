@@ -24,7 +24,7 @@ export class Selector extends Object {
         name.innerHTML = car;
         card.appendChild(name);
         const image = document.createElement("img");
-        image.src = `./images/${car}.png`;
+        image.src = `../images/${car}.png`;
         card.appendChild(image);
         this.element.appendChild(card);
     }

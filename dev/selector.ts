@@ -39,7 +39,7 @@ export class Selector extends Object {
 
         //image of the car
         const image = document.createElement("img");
-        image.src = `./images/${car}.png`;
+        image.src = `../images/${car}.png`;
         card.appendChild(image);
         
         this.element.appendChild(card);
