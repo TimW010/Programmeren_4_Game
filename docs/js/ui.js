@@ -2,13 +2,10 @@ import { Object } from "./object.js";
 export class UI extends Object {
     constructor(game) {
         super("ui");
-        this.timer = 0;
         this.score = 0;
         this.game = game;
         this.scoreDiv = document.createElement("score");
         this.element.appendChild(this.scoreDiv);
-        this.timerDiv = document.createElement("timer");
-        this.element.appendChild(this.timerDiv);
         this.highScoreDiv = document.createElement("highScore");
         this.element.appendChild(this.highScoreDiv);
         this.pauseButton = document.createElement("pauseButton");

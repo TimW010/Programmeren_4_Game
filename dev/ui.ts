@@ -5,11 +5,11 @@ import { Object } from "./object.js";
 export class UI extends Object{
 
     private scoreDiv : HTMLElement;
-    private timerDiv : HTMLElement;
+    //private timerDiv : HTMLElement;
     private highScoreDiv : HTMLElement;
     private pauseButton : HTMLElement;
     
-    private timer : number = 0;
+    //private timer : number = 0;
     private score : number = 0;
     private highScore : number; // must be updated by localstorage
 
@@ -22,8 +22,8 @@ export class UI extends Object{
         this.scoreDiv = document.createElement("score");
         this.element.appendChild(this.scoreDiv);
         //create timer
-        this.timerDiv = document.createElement("timer");
-        this.element.appendChild(this.timerDiv);
+        //this.timerDiv = document.createElement("timer");
+        //this.element.appendChild(this.timerDiv);
         //create highScore
         this.highScoreDiv =  document.createElement("highScore");
         this.element.appendChild(this.highScoreDiv);

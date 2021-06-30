@@ -1,9 +1,8 @@
 import { Object } from "./object.js";
 export class Obstacle extends Object {
-    constructor(game) {
+    constructor() {
         super("obstacle");
         this.carCollection = ["Lamborghini", "Ferrari", "Chevrolet", "Toyota"];
-        this.game = game;
         this.changeCar();
         this.x = Math.floor(Math.random() * ((1579 - this.element.clientWidth) - 340) + 340);
         this.y = (0 - (this.element.clientHeight * 2));
