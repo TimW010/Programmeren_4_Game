@@ -1,5 +1,4 @@
 # Programmeren_4_Game
-Game voor Programmeren 4
+Game for Programmeren 4
 
-Voor de één of andere reden laad github pages de foto's van de auto's niet en maakt github pages geen gebruik van localstorage.
-Hierbij raad ik dus aan om de code te downloaden zodat alle assets erin zijn verwerkt.
+Link to the game: https://stud.hosted.hr.nl/0981877/Programmeren-4-Game/docs/
